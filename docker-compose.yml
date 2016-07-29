@@ -11,6 +11,8 @@ services:
       - rabbitmq
       - memcached
       - solr
+    volumes:
+      - files:/var/potato/files
 
   web1:
     build:
@@ -23,6 +25,8 @@ services:
       - rabbitmq
       - memcached
       - solr
+    volumes:
+      - files:/var/potato/files
 
   web2:
     build:
@@ -35,6 +39,8 @@ services:
       - rabbitmq
       - memcached
       - solr
+    volumes:
+      - files:/var/potato/files
 
   state-server:
     build:
@@ -46,6 +52,8 @@ services:
       - rabbitmq
       - memcached
       - solr
+    volumes:
+      - files:/var/potato/files
 
   content-processor:
     build:
@@ -57,6 +65,8 @@ services:
       - rabbitmq
       - memcached
       - solr
+    volumes:
+      - files:/var/potato/files
 
   index-manager:
     build:
@@ -68,6 +78,8 @@ services:
       - rabbitmq
       - memcached
       - solr
+    volumes:
+      - files:/var/potato/files
 
   email-updates:
     build:
@@ -79,6 +91,8 @@ services:
       - rabbitmq
       - memcached
       - solr
+    volumes:
+      - files:/var/potato/files
 
   couchdb:
     image: couchdb:1.6.1
@@ -102,3 +116,5 @@ services:
       - web0
       - web1
       - web2
+volumes:
+  files: {}
