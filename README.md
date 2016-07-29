@@ -1,6 +1,8 @@
 # Docker configuration for Potato
 
-## Edit the Potato configuration file
+## Installation
+
+### Edit the Potato configuration file
 
 The configuration file is located in `potato/potato.cfg`. Edit this
 file according to the comments in the file. The most important options
@@ -11,7 +13,7 @@ register.
 Without email settings you have to manually add all users using the
 commands given below.
 
-## Build the docker images
+### Build the docker images
 
 Build the Potato image using the name `potato`.
 
@@ -25,12 +27,12 @@ You can now bring up the servers:
 docker-compose up --build
 ```
 
-## Test the connectivity
+### Test the connectivity
 
 Once the servers are up, you should be able to access the service on
 port 80 of the host where the Docker containers are running.
 
-# Creating domains and users
+## Creating domains and users
 
 First, identify the ID of one of the web containers:
 
