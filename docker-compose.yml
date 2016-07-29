@@ -1,0 +1,104 @@
+version: '2'
+services:
+  web0:
+    build:
+      context: potato
+    restart: unless-stopped
+    expose: ["8080", "8081"]
+    command: ["--potato"]
+    links:
+      - couchdb
+      - rabbitmq
+      - memcached
+      - solr
+
+  web1:
+    build:
+      context: potato
+    restart: unless-stopped
+    expose: ["8080"]
+    command: ["--potato"]
+    links:
+      - couchdb
+      - rabbitmq
+      - memcached
+      - solr
+
+  web2:
+    build:
+      context: potato
+    restart: unless-stopped
+    expose: ["8080"]
+    command: ["--potato"]
+    links:
+      - couchdb
+      - rabbitmq
+      - memcached
+      - solr
+
+  state-server:
+    build:
+      context: potato
+    restart: unless-stopped
+    command: ["--state-server"]
+    links:
+      - couchdb
+      - rabbitmq
+      - memcached
+      - solr
+
+  content-processor:
+    build:
+      context: potato
+    restart: unless-stopped
+    command: ["--content-processor"]
+    links:
+      - couchdb
+      - rabbitmq
+      - memcached
+      - solr
+
+  index-manager:
+    build:
+      context: potato
+    restart: unless-stopped
+    command: ["--index"]
+    links:
+      - couchdb
+      - rabbitmq
+      - memcached
+      - solr
+
+  email-updates:
+    build:
+      context: potato
+    restart: unless-stopped
+    command: ["--email-updates"]
+    links:
+      - couchdb
+      - rabbitmq
+      - memcached
+      - solr
+
+  couchdb:
+    image: couchdb:1.6.1
+
+  rabbitmq:
+    image: rabbitmq:3.6.3
+
+  memcached:
+    image: memcached:latest
+
+  solr:
+    build:
+      context: solr
+
+  haproxy:
+    build:
+      context: haproxy
+    ports: ["80:80"]
+    expose: ["80"]
+    links:
+      - web0
+      - web1
+      - web2
