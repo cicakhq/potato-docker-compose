@@ -1,4 +1,4 @@
-# Quick install
+# Docker configuration for Potato
 
 ## Edit the Potato configuration file
 
