@@ -1,4 +1,4 @@
-FROM potato
+FROM lokedhs/potato
 
 ENV POTATO_WORK /potato
 

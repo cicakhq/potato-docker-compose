@@ -15,13 +15,17 @@ commands given below.
 
 ### Build the docker images
 
-Build the Potato image using the name `potato`.
+Use the following command to build the configuration:
 
 ```
-docker build -t potato lokedhs/potato
+docker-compose build
 ```
 
-You can now bring up the servers:
+### Starting the servers
+
+The following command will start the servers (it will also rebuild the
+configuration so strictly speaking the previous command is not
+required):
 
 ```
 docker-compose up --build
