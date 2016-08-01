@@ -1,5 +1,17 @@
 # Docker configuration for Potato
 
+## Prerequisites
+
+In order to run the Docker configuration, you need to have Docker and
+docker-compose installed. Also, the configuration uses version 2 of
+the docker-compose format, so you need a recent version.
+
+To install the most recent version of Docker, refer to the official
+documentation: https://docs.docker.com/engine/installation/
+
+The documentation on how to install docker-compose can be found here:
+https://docs.docker.com/compose/install/
+
 ## Installation
 
 ### Edit the Potato configuration file
