@@ -76,7 +76,7 @@ To create a new channel under this domain, use the following command.
 Use the domain ID that was returned from the previous command.
 
 ```
-docker exec cf47c4774e73 ./cmd.sh 'create-channel "Example channel" b45d09fb8e4a679107a74dfdc400c0bc'
+docker exec cf47c4774e73 ./cmd.sh 'create-channel b45d09fb8e4a679107a74dfdc400c0bc "Example channel"'
 
 ```
 
