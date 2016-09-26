@@ -57,8 +57,8 @@ $ docker ps | grep web0
 cf47c4774e73        potatodockercompose_web0 ...
 ```
 
-In this case, the string `cf47c4774e73` is the container ID. Use this
-in the examples below.
+In this case, the string `cf47c4774e73` is the container ID. This
+is the id used in the examples below.
 
 To show help for the Potato server commands:
 
@@ -66,7 +66,7 @@ To show help for the Potato server commands:
 docker exec cf47c4774e73 ./cmd.sh 'help'
 ```
 
-At the very least you to configure a default domain:
+At the very least you need to configure a default domain:
 
 ```
 docker exec cf47c4774e73 ./cmd.sh 'create-domain Foo true true'
@@ -76,7 +76,7 @@ To create a new channel under this domain, use the following command.
 Use the domain ID that was returned from the previous command.
 
 ```
-docker exec cf47c4774e73 ./cmd.sh 'create-channel "Example channel" b45d09fb8e4a679107a74dfdc400c0bc'
+docker exec cf47c4774e73 ./cmd.sh 'create-channel b45d09fb8e4a679107a74dfdc400c0bc "Example channel"'
 
 ```
 
