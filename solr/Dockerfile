@@ -17,7 +17,6 @@ RUN mkdir -p server/solr/potato/conf && \
     cp -R example/files/conf/lang server/solr/potato
 
 RUN cp /tmp/potato/deploy/roles/solr/files/schema.xml \
-       /tmp/potato/deploy/roles/solr/files/elevate.xml \
        /tmp/potato/deploy/roles/solr/files/solrconfig.xml server/solr/potato/conf
 
 RUN bin/solr start && \
