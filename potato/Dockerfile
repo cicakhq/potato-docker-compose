@@ -2,6 +2,7 @@ FROM lokedhs/potato
 
 ENV POTATO_WORK /potato
 
+RUN apt-get update
 RUN apt-get install -y curl
 
 COPY wait-for-it.sh /usr/local/bin
