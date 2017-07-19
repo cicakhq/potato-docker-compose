@@ -1,0 +1,25 @@
+version: '2'
+services:
+  couchdb:
+    image: couchdb:1.6.1
+    ports: ["5984:5984"]
+    expose: ["5984"]
+
+  rabbitmq:
+    image: rabbitmq:3.6.3
+    ports: ["5672:5672"]
+    expose: ["5672"]
+
+  memcached:
+    image: memcached:latest
+    ports: ["11211:11211"]
+    expose: ["11211"]
+
+  solr:
+    build:
+      context: ../solr
+    ports: ["8983:8983"]
+    expose: ["8983"]
+
+volumes:
+  files: {}
