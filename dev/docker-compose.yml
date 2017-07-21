@@ -1,7 +1,7 @@
 version: '2'
 services:
   couchdb:
-    image: couchdb:1.6.1
+    image: klaemo/couchdb:latest
     ports: ["5984:5984"]
     expose: ["5984"]
 
