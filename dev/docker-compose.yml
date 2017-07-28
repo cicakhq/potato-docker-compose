@@ -1,14 +1,15 @@
 version: '2'
 services:
   couchdb:
-    image: klaemo/couchdb:latest
+    image: lokedhs/couchdb:latest
     ports: ["5984:5984"]
     expose: ["5984"]
 
   rabbitmq:
-    image: rabbitmq:3.6.3
-    ports: ["5672:5672"]
-    expose: ["5672"]
+    build:
+      context: ../rabbitmq
+    ports: ["5672:5672", "15672:15672"]
+    expose: ["5672", "15672"]
 
   memcached:
     image: memcached:latest
