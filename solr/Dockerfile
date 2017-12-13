@@ -7,7 +7,7 @@ USER solr
 RUN cd /tmp && \
     git clone https://github.com/cicakhq/potato && \
     cd potato && \
-    git checkout 14e255701c37164f6216956e2244ecb74623a87b
+    git checkout 420117181127b3ae3e2e1e604e85c9c07f38c97b
 
 RUN mkdir -p server/solr/potato/conf && \
     cp example/files/conf/stopwords.txt \
