@@ -95,7 +95,7 @@ services:
       - files:/var/potato/files
 
   couchdb:
-    image: klaemo/couchdb:latest
+    image: couchdb:2.1.1
 
   rabbitmq:
     image: rabbitmq:3.6.3
