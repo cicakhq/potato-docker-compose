@@ -4,6 +4,8 @@ services:
     image: lokedhs/couchdb:latest
     ports: ["5984:5984"]
     expose: ["5984"]
+    volumes:
+      - couchdb-volume:/opt/couchdb/data
 
   rabbitmq:
     build:
@@ -24,3 +26,4 @@ services:
 
 volumes:
   files: {}
+  couchdb-volume:
