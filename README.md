@@ -50,38 +50,26 @@ port 80 of the host where the Docker containers are running.
 
 ## Creating domains and users
 
-First, identify the ID of one of the web containers:
-
 ```
-$ docker ps | grep web0
-cf47c4774e73        potatodockercompose_web0 ...
-```
-
-In this case, the string `cf47c4774e73` is the container ID. This
-is the id used in the examples below.
-
-To show help for the Potato server commands:
-
-```
-docker exec cf47c4774e73 ./cmd.sh 'help'
+docker-compose exec web0 ./cmd.sh 'help'
 ```
 
 At the very least you need to configure a default domain:
 
 ```
-docker exec cf47c4774e73 ./cmd.sh 'create-domain Foo true true'
+docker-compose exec web0 ./cmd.sh 'create-domain Foo true true'
 ```
 
 To create a new channel under this domain, use the following command.
 Use the domain ID that was returned from the previous command.
 
 ```
-docker exec cf47c4774e73 ./cmd.sh 'create-channel b45d09fb8e4a679107a74dfdc400c0bc "Example channel"'
+docker-compose exec web0 ./cmd.sh 'create-channel b45d09fb8e4a679107a74dfdc400c0bc "Example channel"'
 
 ```
 
 To create a user:
 
 ```
-docker exec cf47c4774e73 ./cmd.sh 'create-user foo@foo.com "Foo user" "password" false true'
+docker-compose exec web0 ./cmd.sh 'create-user foo@foo.com "Foo user" "password" false true'
 ```
